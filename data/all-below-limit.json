@@ -1,0 +1,100 @@
+{
+  "units": {
+    "time": "hour",
+    "dose": "mg",
+    "concentration": "mg/L"
+  },
+  "infusions": [
+    {
+      "id": "dose1",
+      "start": 0,
+      "end": 2,
+      "dose": 100
+    },
+    {
+      "id": "dose2",
+      "start": 24,
+      "end": 26,
+      "dose": 80
+    },
+    {
+      "id": "overlap",
+      "start": 25,
+      "end": 27,
+      "dose": 20
+    }
+  ],
+  "samples": [
+    {
+      "id": "b0",
+      "time": 1,
+      "kind": "below_limit",
+      "limit": 0.3,
+      "sigma": 0.2
+    },
+    {
+      "id": "b1",
+      "time": 3,
+      "kind": "below_limit",
+      "limit": 0.3,
+      "sigma": 0.2
+    },
+    {
+      "id": "b2",
+      "time": 10,
+      "kind": "below_limit",
+      "limit": 0.3,
+      "sigma": 0.2
+    },
+    {
+      "id": "b3",
+      "time": 80,
+      "kind": "below_limit",
+      "limit": 0.3,
+      "sigma": 0.2
+    }
+  ],
+  "rate_pairs": [
+    [
+      0.4,
+      0.03
+    ],
+    [
+      0.6,
+      0.06
+    ],
+    [
+      0.9,
+      0.1
+    ]
+  ],
+  "amplitude_bounds": {
+    "A": [
+      0,
+      1
+    ],
+    "B": [
+      0,
+      1
+    ]
+  },
+  "auc_windows": [
+    [
+      0,
+      24
+    ],
+    [
+      24,
+      48
+    ],
+    [
+      0,
+      100
+    ]
+  ],
+  "near_optimal_gap": 2.0,
+  "solver": {
+    "tolerance": 1e-08,
+    "max_iterations": 10000
+  }
+}
