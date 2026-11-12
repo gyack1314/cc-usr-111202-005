@@ -5,16 +5,16 @@ import math
 from fractions import Fraction
 from pathlib import Path
 
-def finite(x):
-    if isinstance(x,bool) or not isinstance(x,(int,float)) or not math.isfinite(x):raise ValueError('需要有限数值')
+def finite(x,name='数值'):
+    if isinstance(x,bool) or not isinstance(x,(int,float)) or not math.isfinite(x):raise ValueError(f'{name}需要有限数值')
     return x
 
-def positive(x):
-    if finite(x)<=0:raise ValueError('需要正数')
+def positive(x,name='数值'):
+    if finite(x,name)<=0:raise ValueError(f'{name}需要正数')
     return x
 
-def integer(x,minimum=0):
-    if type(x) is not int or x<minimum:raise ValueError('整数超出范围')
+def integer(x,minimum=0,name='整数'):
+    if type(x) is not int or x<minimum:raise ValueError(f'{name}超出范围')
     return x
 
 def identity(x):
